@@ -92,10 +92,21 @@ function oddOrEven(number) {
 //  a = b;
 //  b = c;
 function Fibbonacci(n) {
-  return n < 1 ? 0 : n <= 2 ? 1 : Fibbonacci(n - 1) + Fibbonacci(n - 2);
+  let a = 0;
+  let b = 1;
+  let c = 0;
+  let tempList = [];
+
+  for (let i = 0; i < n; i++) {
+    tempList.push(a);
+    c = a + b;
+    a = b;
+    b = c;
+  }
+  return tempList;
 }
 
-console.log(Fibbonacci(10));
+console.log(Fibbonacci(30));
 
 //11.--------------------------------------------------------------------------------------
 //BONUS!Implement fizzbuzz, if a number is divisible by 3: Fizz, if a number is divisible by 5: Buzz, if the number is divisible by both 3 and 5, FizzBuzz
